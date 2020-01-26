@@ -1,0 +1,17 @@
+body {
+  font-family: 'Caveat', cursive;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Zhi Mang Xing', cursive;
+}
+
+.text-content {
+    font-family: 'Caveat', cursive;
+}
+
+.map {
+	border: 1px solid LightGray;
+  min-height: 300px;
+}
