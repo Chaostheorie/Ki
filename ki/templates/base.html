@@ -39,7 +39,7 @@
 </head>
 {% block navbar -%}
 <body id="index" class="blog">
-  <nav class="navbar navbar-expand-lg  navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-nav text-highlight">
     {% block navbrand -%}
       <a class="navbar-brand text-muted text-bold" href="/">{{ config["SITENAME"] }}</h1></a>
     {% endblock -%}
@@ -60,17 +60,13 @@
     <section id="wrapper" class="clearfix">
         <!-- Content -->
           <section id="content" class="{% block content_class -%}container m-2 text-general{% endblock content_class -%}" >
-            {% if not content_title_visible is defined or content_title_visible == False -%}
-            <h1>{% block content_title %}{% endblock %}</h1>
-            <hr>
-            {% endif -%}
               {% block content %}
               {% endblock %}
           </section>
         <!-- #content -->
     </section>
     {% block footer %}
-        <footer class="text-center fixed-bottom pt-2 pb-2 w-100 bg-dark" >
+        <footer class="text-center fixed-bottom pt-2 pb-2 w-100 bg-nav text-highlight" >
           <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
             Powered by <a href="https://www.palletsprojects.com/p/flask/">Flask</a> and created by <a href="https://sinclair.gq">Cobalt</a>
         </footer>
