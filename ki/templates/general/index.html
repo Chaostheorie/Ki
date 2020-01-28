@@ -1,10 +1,26 @@
 {% extends "general/_base.html" -%}
+{% block content_class -%}
+container d-flex h-100 align-items-center
+{% endblock -%}
 {% block content -%}
-<div class="jumbotron align-center f-flex justify-content-center h-100 text-center">
-  <h1>Willkommen bei Ki</h1>
-  <hr>
+<div class="jumbotron bg-transparent">
+  <p class="display-4 text-highlight">Willkommen bei Ki</p>
+  <hr class="my-4">
+  <div class="lead my-4">
   <p>
-    Add content
+    In Berlin sind mehr als 80% der <a href="/glossar/baumbeet" class="text-muted">Baumbeete</a> unbetreut.
   </p>
+  <p>
+    Mache deine Stadt grüner und beantrage noch heute dein eigenes Baumbeet
+  </p>
+  </div>
+  <form class="form-inline align-self-center w-100" action="/map" method="GET">
+    <div class="input-group text-highlight mt-2">
+      <input type="text" class="form-control" id="plz" name="plz" autofocus placeholder="Postleitzahl">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-outline-success">Baum finden</button>
+      </div>
+    </div>
+  </form>
 </div>
 {% endblock -%}

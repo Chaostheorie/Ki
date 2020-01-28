@@ -1,11 +1,17 @@
 {% extends "general/_base.html" -%}
+{% block content_class -%}
+container d-flex h-100 align-items-center
+{% endblock -%}
 {% block content -%}
-<div class="text-center align-center">
-  <h1>Kontakt</h1>
-  <hr>
+<div class="jumbotron bg-transparent">
+  <p class="display-4 text-highlight">Kontakt</p>
+  <hr class="my-4">
+  <div class="lead my-4">
   <p>
-    Besucht uns auf <a href="https://github.com/Chaostheorie/Ki" class="text-muted">Github</a>
-    <br>
-    <button type="button" class="btn btn-outline-secondary">E-Mail</button>
+    Wenn du Probleme oder Fragen zur Website hast bitte erstelle ein Issue auf <a href="https://github.com/Chaostheorie/Ki/issues" class="text-highlight text-muted">Github</a>.
+  </p>
+  <p>
+    Wenn du andere Fragen hast schreibe Cobalt eine <a href="mailto:chaosthe0rie@protonmail.com" class="text-highlight text-muted">Email</a>
+  </p>
 </div>
 {% endblock -%}

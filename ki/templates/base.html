@@ -38,25 +38,26 @@
     {% endblock head %}
 </head>
 {% block navbar -%}
-<body id="index" class="blog">
-  <nav class="navbar navbar-expand-lg navbar-light bg-nav text-highlight">
-    {% block navbrand -%}
-      <a class="navbar-brand text-muted text-bold" href="/">{{ config["SITENAME"] }}</h1></a>
-    {% endblock -%}
-    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        {% block nav_items -%}
-          {% for title, link, class in config["MENUITEMS"] %}
-              <li class="nav-item {{ class }}"><a href="{{ link }}" class="nav-link">{{ title }}</a></li>
-          {% endfor %}
-        {% endblock nav_items -%}
-      </ul>
-    </div>
-  </nav>
-  {% endblock navbar -%}
+<nav class="text-highlight navbar navbar-light bg-nav">
+  {% block navbrand -%}
+    <a class="navbar-brand text-bold" href="/">{{ config["SITENAME"] }}</h1></a>
+  {% endblock -%}
+  <a class="btn btn-outline-success my-2 my-sm-0 ml-auto mr-1" href="/">Nächsten Baum finden</a>
+  <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse ml-auto mr-1" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <div class="nav-item">
+        <a href="/contact" class="nav-link">Kontakt</a>
+      </div>
+      <div class="nav-item">
+        <a href="/about" class="nav-link">About</a>
+      </div>
+    </ul>
+  </div>
+</nav>
+{% endblock navbar -%}
     <section id="wrapper" class="clearfix">
         <!-- Content -->
           <section id="content" class="{% block content_class -%}container m-2 text-general{% endblock content_class -%}" >

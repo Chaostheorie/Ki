@@ -55,7 +55,7 @@ class Config:
     MENUITEMS = (
         ("About", "/about", "nav-link"),
         ("Kontakt", "/contact", "nav-link"),
-        ("Baumbeet finden", "/", "form-inline text-bold btn btn-outline-secondary")
+        ("Baumbeet finden", "/", "form-inline my-2 my-sm-0 btn btn-outline-secondary")
     )
 
     SITENAME = "木 Ki"

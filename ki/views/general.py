@@ -11,6 +11,17 @@ def index():
 def about():
     return render_template("/general/about.html")
 
+
 @ki.route("/contact")
 def contact():
     return render_template("/general/contact.html")
+
+
+@ki.route("/glossar/baumbeet")
+def glossar_baumbeet():
+    return render_template("/general/baumbeete.html")
+
+
+@ki.route("/map")
+def map():
+    return render_template("/general/map.html")
