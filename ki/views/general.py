@@ -1,5 +1,5 @@
 from ki import ki
-from flask import render_template
+from flask import render_template, request, abort
 
 
 @ki.route("/")
@@ -24,4 +24,7 @@ def glossar_baumbeet():
 
 @ki.route("/map")
 def map():
-    return render_template("/general/map.html")
+    plz = request.args.get("plz", default=None, type=int)
+    if plz is None:
+        return abort(400)
+    return render_template("/general/map.html", plz=plz)
