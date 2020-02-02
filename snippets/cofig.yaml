@@ -1,0 +1,13 @@
+url: https://fbinter.stadt-berlin.de/fb/wfs/data/senstadt/s_wfs_baumbestand
+layer: fis:s_wfs_baumbestand
+
+bbox:
+  west: 369097.85
+  south: 5799298.14
+  east: 416865.04
+  north: 5838236.21
+
+size: 50000
+outputfile: strassenbaeume.xml
+projection: EPSG:25833
+tmpdir: /tmp
