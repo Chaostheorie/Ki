@@ -2,8 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Custom
 venv/
 app.db
+*.json
 
 # C extensions
 *.so
