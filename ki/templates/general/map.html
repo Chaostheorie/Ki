@@ -8,10 +8,57 @@
 <script src="/static/js/leaflet.markercluster-src.js"></script>
 {% endblock advanced_head -%}
 {% block javascript -%}
-<script>
-  // Map Code
+  <script>
+  {% autoescape false %}
+  const coords = {{ trees.jsonify() }};
+  {% endautoescape -%}
+  var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  				maxZoom: 19,
+  				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+  			});
+  const latlng = L.latLng([coords[0][1], coords[0][0]]);
+
+  var map = L.map('map', {center: latlng, zoom: 19, layers: [tiles]});
+  var markers = L.markerClusterGroup();
+
+  for (var i = 0; i < coords.length; i++) {
+  	var marker = L.marker([coords[i][1], coords[i][0]]).bindPopup(coords[i][2]);
+    marker.data = coords[i][3];
+  	markers.addLayer(marker);
+  }
+
+  map.addLayer(markers);
+  markers.on('click', function (a) {
+     $( "#tree-title" ).html(a.layer.data["title"]); {# Consist of type + Number #}
+     $( "#tree-address" ).html(a.layer.data["address"]); {# address #}
+     $( "#tree-id" ).value(a.layer.data["id"]);  {# UID by city Berlin not representiv for database id #}
+     $( "#tree-available" ).value(a.layer.data["available"]);
+  });
 </script>
 {% endblock javascript -%}
+{% block content_class -%}
+container
+{% endblock content_class -%}
 {% block content -%}
-Theres gonna be a map
+<div class="row">
+  <div id="map" class="map col-8"></div>
+  <div class="col-4 container">
+    <div class="card">
+      <img class="card-img-top" src="/static/images/tree.svg" alt="Tree" />
+      <div class="card-body">
+        <h5 id="tree-title">Baum</h5>
+        <hr>
+        <p class="card-text">
+          Adresse: <span id="tree-address"></span>
+          <br>
+          Verfügbar: <span id="tree-available"></span>
+        </p>
+        <form action="/map" method="POST">
+          <input type="hidden" name="tree-id" id="tree-id">
+          <button class="btn btn-outline-success">Baum beantragen</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content -%}

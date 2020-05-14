@@ -59,6 +59,10 @@ class Config:
     )
 
     SITENAME = "木 Ki"
+    
+
+    # Email
+    EMAIL_FROM = "root@"
 
 
 class development(Config):

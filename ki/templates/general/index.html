@@ -1,26 +1,29 @@
-{% extends "general/_base.html" -%}
-{% block content_class -%}
-container d-flex h-100 align-items-center
-{% endblock -%}
-{% block content -%}
-<div class="jumbotron bg-transparent">
-  <p class="display-4 text-highlight">Willkommen bei Ki</p>
-  <hr class="my-4">
-  <div class="lead my-4">
-  <p>
-    In Berlin sind mehr als 80% der <a href="/glossar/baumbeet" class="text-muted">Baumbeete</a> unbetreut.
-  </p>
-  <p>
-    Mache deine Stadt grüner und beantrage noch heute dein eigenes Baumbeet
-  </p>
-  </div>
-  <form class="form-inline align-self-center w-100" action="/map" method="GET">
-    <div class="input-group text-highlight mt-2">
-      <input type="text" class="form-control" id="plz" name="plz" autofocus placeholder="Postleitzahl">
-      <div class="input-group-append">
-        <button type="submit" class="btn btn-outline-success">Baum finden</button>
-      </div>
+{% extends "general/_base.html" -%} {% block content_class -%} text-general vh-100 w-100 d-flex align-items-center my-auto {% endblock -%} {% block content -%}
+<div class="col-12 container w-100 mx-2 text-center">
+    <p class="display-4 text-highlight">Willkommen bei Ki
+        <hr class="my-2 mx-auto w-responsive">
+    </p>
+    <div class="lead my-auto">
+        <p>
+            In Berlin sind mehr als 80% der <a href="/glossar/baumbeet" class="text-muted">Baumbeete</a> unbetreut.
+        </p>
+        <p>
+            Mache deine Stadt grüner und beantrage noch heute dein eigenes Baumbeet
+        </p>
     </div>
-  </form>
+    <div class="row align-items-center w-responsive mx-auto">
+        <div class="col-sm">
+            <form class="form" action="/map" method="GET"></form>
+            <div class="md-form input-group">
+                <label class="custom-plz-label" for="inputGroupFile01"><i class="fas fa-home"></i>Postleitzahl</label>
+                <input type="text" class="form-control" id="plz" name="plz" aria-describedby="material-addon1">
+                <div class="input-group-append">
+                    <button class="btn btn-md btn-outline-success m-0 px-3" type="button" id="material-addon1">Button</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
 </div>
 {% endblock -%}

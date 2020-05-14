@@ -1,16 +1,20 @@
 body {
-  font-family: 'Caveat', cursive;
-  font-size: 18pt;
+    font-family: 'Caveat', cursive;
+    font-size: 18pt;
 }
 
-
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Zhi Mang Xing', cursive;
     font-weight: 600;
 }
 
 hr {
-  color: LightGray;
+    color: LightGray;
 }
 
 .text-content {
@@ -18,14 +22,18 @@ hr {
 }
 
 .text-highlight {
-  font-family: 'Zhi Mang Xing', cursive;
+    font-family: 'Zhi Mang Xing', cursive;
 }
 
 .map {
-	border: 1px solid LightGray;
-  min-height: 300px;
+    border: 1px solid LightGray;
+    min-height: 300px;
 }
 
 .bg-nav {
-  background-color: WhiteSmoke;
+    background-color: WhiteSmoke;
+}
+
+.vh-100 {
+    height: 90vh !important;
 }
