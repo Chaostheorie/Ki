@@ -13,17 +13,16 @@
     </div>
     <div class="row align-items-center w-responsive mx-auto">
         <div class="col-sm">
-            <form class="form" action="/map" method="GET"></form>
-            <div class="md-form input-group">
-                <label class="custom-plz-label" for="inputGroupFile01"><i class="fas fa-home"></i>Postleitzahl</label>
-                <input type="text" class="form-control" id="plz" name="plz" aria-describedby="material-addon1">
-                <div class="input-group-append">
-                    <button class="btn btn-md btn-outline-success m-0 px-3" type="button" id="material-addon1">Button</button>
+            <form class="form" action="/map" method="GET">
+                <div class="md-form input-group">
+                    <label class="custom-plz-label" for="inputGroupFile01"><i class="fas fa-home"></i>Postleitzahl</label>
+                    <input type="number" required class="form-control" id="plz" name="plz" aria-describedby="material-addon1">
+                    <div class="input-group-append">
+                        <button class="btn btn-md btn-outline-success m-0 px-3" type="submit" id="material-addon1">Suchen</button>
+                    </div>
                 </div>
-            </div>
             </form>
         </div>
     </div>
-
 </div>
 {% endblock -%}

@@ -7,7 +7,7 @@ bbox:
   east: 416865.04
   north: 5838236.21
 
-size: 50000
+size: 10000
 outputfile: strassenbaeume.xml
 projection: EPSG:25833
-tmpdir: /tmp
+tmpdir: /tmp/wfs-downloader
